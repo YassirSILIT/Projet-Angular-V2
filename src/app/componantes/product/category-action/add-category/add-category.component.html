@@ -1,0 +1,31 @@
+<div class="col m-5">
+  <div class="card">
+    <div class="col-md-12">
+      <div class="col-md-12  card-header text-white background-priary">
+        <h2>New Category</h2>
+      </div>
+    </div>
+    <div class="col-md-12 card-body">
+      <form [formGroup]="categoryForm" (ngSubmit)="saveCategory()">
+        <div class="row mb-3">
+          <div class="col">
+            <input type="text" class="form-control" formControlName="code" placeholder="Code category">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <input type="text" class="form-control" formControlName="designation" placeholder="Description">
+          </div>
+        </div>
+        <div class="col-md-12 text-end">
+          <button [disabled]="categoryForm.invalid" class="btn btn-success m-3">
+            <i class="bi bi-floppy2"></i>&nbsp;Save
+          </button>
+          <button class="btn btn-danger" routerLink="/category">
+            <i class="bi bi-x-circle"></i>&nbsp;Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

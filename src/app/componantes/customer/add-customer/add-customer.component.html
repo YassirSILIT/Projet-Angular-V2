@@ -1,0 +1,73 @@
+<!-- <div class="p-3">
+  <div class="card">
+    <div class="card-header">
+      <h2>New Customer</h2>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <form [formGroup]="customerForm" (ngSubmit)="saveCustomer()">
+            <div class="mb-3">
+              <label class="form-label" >First Name</label>
+              <input class="form-control" formControlName="firstName" placeholder="Enter Your First Name">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Last Name</label>
+              <input class="form-control" formControlName="lastName" placeholder="Enter Your Last Name">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input class="form-control" formControlName="email" placeholder="Enter Your Email">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Phone</label>
+              <input class="form-control" formControlName="phone" placeholder="Enter Your Phone">
+            </div>
+            <div class="m-3">
+              <button [disabled]="customerForm.invalid" class="btn btn-success m-2">Save</button>
+              <button class="btn btn-danger" routerLink="/customers">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div> -->
+
+
+<div class="col m-5">
+  <div class="card">
+  <div class="col-md-12">
+    <div class="col-md-12  card-header text-white background-priary">
+      <h2>New Customer</h2>
+    </div>
+    <div class="col-md-12 card-body">
+      <form [formGroup]="customerForm" (ngSubmit)="saveCustomer()">
+        <div class="row m-2">
+          <div class="col">
+            <input class="form-control" formControlName="firstName" placeholder="First Name">
+          </div>
+            <div class="col">
+              <input class="form-control" formControlName="lastName" placeholder="Last Name">
+            </div>
+        </div>
+        <div class="row m-2">
+          <div class="col">
+            <input class="form-control" formControlName="email" placeholder="Email">
+          </div>
+            <div class="col">
+              <input class="form-control" formControlName="phone" placeholder="Phone">
+            </div>
+        </div>
+        <div class="col-md-12 m-1 text-end">
+          <button [disabled]="customerForm.invalid" class="btn btn-success m-2">
+            <i class="bi bi-floppy2"></i>&nbsp;Save
+          </button>
+          <button class="btn btn-danger" routerLink="/customers">
+            <i class="bi bi-x-circle"></i>&nbsp;Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>

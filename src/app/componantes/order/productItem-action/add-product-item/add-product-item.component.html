@@ -1,0 +1,43 @@
+<div class="col m-5">
+  <div class="card">
+  <div class="col-md-12">
+    <div class=" card-header text-white background-priary">
+          <!-- <i class="bi bi-info-circle-fill"></i>&nbsp; -->
+          <h2>Saved the new Product-Item</h2>
+    </div>
+    <div class="col-md-12 card-body">
+      <form [formGroup]="productItemForm" (ngSubmit)="saveProductItem()">
+        <div class="row m-2">
+          <div class="col">
+            <input type="text" class="form-control" formControlName="productId" placeholder="Product Id">
+          </div>
+            <div class="col">
+              <input type="text" class="form-control" formControlName="quantity" placeholder="Quantity">
+            </div>
+        </div>
+        <div class="row m-2">
+          <div class="col">
+            <input type="text" class="form-control" formControlName="price" placeholder="Price">
+          </div>
+            <div class="col">
+              <input type="text" class="form-control" formControlName="discount" placeholder="Discount">
+            </div>
+        </div>
+        <div class="row m-2">
+          <div class="col">
+            <input type="text" class="form-control" formControlName="orderId" placeholder="Order Id">
+          </div>
+        </div>
+        <div class="col-md-12 text-end">
+          <button [disabled]="productItemForm.invalid"  class="btn btn-success m-2">
+            <i class="bi bi-floppy2"></i>&nbsp;Save
+          </button>
+          <button class="btn btn-danger" routerLink="/productItems">
+            <i class="bi bi-x-circle"></i>&nbsp;Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>

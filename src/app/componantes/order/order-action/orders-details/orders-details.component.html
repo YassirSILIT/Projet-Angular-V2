@@ -1,0 +1,69 @@
+<div class="container mt-2" *ngIf="orderDetails">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">Order ID : {{orderDetails.id}} </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item">Date : {{orderDetails.date | date : 'dd/MM/yyyy'}}</li>
+            <li class="list-group-item">Status : {{orderDetails.state}}</li>
+            <li class="list-group-item">Customer Id : {{orderDetails.customer.id}}</li>
+            <li class="list-group-item">Customer F-Name : {{orderDetails.customer.firstName}}</li>
+            <li class="list-group-item">Customer L-Name : {{orderDetails.customer.lastName}}</li>
+            <li class="list-group-item">Customer Email : {{orderDetails.customer.email}}</li>
+            <li class="list-group-item">Customer Phone : {{orderDetails.customer.phone}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">Product Items</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-striped table-sm">
+              <thead class="thead-dark">
+                <tr class="haut">
+                  <th>Product Id</th>
+                  <th>Product Name</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Discount</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let pro of orderDetails.productItems">
+                  <td>{{pro.id}}</td>
+                  <td>{{pro.product.name}}</td>
+                  <td>{{pro.quantity}}</td>
+                  <td>{{pro.price | number : '.2'}}</td>
+                  <td class="text-end">{{pro.discount | number : '.2'}} %</td>
+                  <td class="text-end">{{pro.amount | number : '.2'}}</td>
+                </tr>
+                <tr class="haut">
+                  <td colspan="5" class="text-end">Total</td>
+                  <td class="text-end">{{orderDetails.total | number : '.2'}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row p-3">
+    <div class="col md-12 text-center">
+      <button class="btn btn-success m-1" routerLink="/orders">
+        <i class="bi bi-cart3"></i>&nbsp; Orders
+      </button>
+      <button class="btn btn-danger" routerLink="/customers">
+        <i class="bi bi-person-lines-fill"></i>&nbsp; Customers
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container" *ngIf="orderDetails">
+  {{orderDetails | json}}
+</div> -->

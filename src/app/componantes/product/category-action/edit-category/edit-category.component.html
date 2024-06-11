@@ -1,0 +1,29 @@
+<div class="col m-3">
+  <div class="card">
+  <div class="col-md-12">
+    <div class="col-md-12  card-header">
+      <h2>Category ID : {{categoryId}}</h2>
+    </div>
+    <div class="col-md-12 card-body" *ngIf="categoryFormGroup">
+      <form [formGroup]="categoryFormGroup" (ngSubmit)="updateCategory()">
+        <div class="row m-2">
+          <div class="col">
+            <input type="text" class="form-control" formControlName="code" placeholder="Code">
+          </div>
+            <div class="col">
+              <input type="text" class="form-control" formControlName="designation" placeholder="Description">
+            </div>
+        </div>
+        <div class="col-md-12 m-1 text-center">
+          <button [disabled]="categoryFormGroup.invalid"  class="btn btn-success m-2">
+            <i class="bi bi-floppy2"></i>&nbsp;Update
+          </button>
+          <button class="btn btn-danger" routerLink="/category">
+            <i class="bi bi-x-circle"></i>&nbsp;Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>

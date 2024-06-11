@@ -1,0 +1,55 @@
+<div class="p-3">
+  <div class="card">
+    <div class="card-header">
+      <h2>List of Customers</h2>
+    </div>
+    <div class="card-body">
+      <div class="card-body">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" [(ngModel)]="keyword" placeholder="Recipient's FirstName" aria-label="Recipient's username" aria-describedby="button-addon2">
+          <button (click)="searchCustomer()" class="btn btn-outline-secondary" type="button" id="button-addon2">
+            <i class="bi bi-search"></i>
+            Search
+          </button>
+        </div>
+      </div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+           <th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Phone</th><th>Orders</th><th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customers">
+            <td>{{customer.id}}</td>
+            <td>{{customer.firstName}}</td>
+            <td>{{customer.lastName}}</td>
+            <td>{{customer.email}}</td>
+            <td>{{customer.phone}}</td>
+            <td>
+              <button class="btn btn-success" (click)="getOrderByCustomer(customer)">Orders</button>
+            </td>
+
+            <div class="p-2">
+              <td >
+                <button (click)="handleDelete(customer)" class="btn btn-outline-danger">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </td>
+              <td>
+                <button (click)="handleEdit(customer)" class="btn btn-outline-success">
+                  <i class="bi bi-eyedropper"></i>
+                </button>
+              </td>
+            </div>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row mb-3">
+        <div class="col-md-12 text-center">
+          <app-pagination></app-pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
